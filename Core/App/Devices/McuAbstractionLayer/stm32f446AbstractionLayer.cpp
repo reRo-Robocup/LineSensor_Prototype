@@ -12,7 +12,7 @@ void stm32f446AbstractionLayer::init() {
 }
 
 // ADC
-uint16_t stm32f446AbstractionLayer::_data[16] = {0};
+uint16_t stm32f446AbstractionLayer::_data[2] = {0};
 
 void stm32f446AbstractionLayer::_initADC(void) {
     if (HAL_ADC_Start_DMA(&hadc1, (uint32_t*)this->_data, sizeof(uint16_t)) * hadc1.Init.NbrOfConversion !=

@@ -1,5 +1,5 @@
 /*
- * baseAdcDriver.hpp
+ * lineSensorDriver.hpp
  *
  *  Created on: Dec 7, 2023
  */
@@ -8,17 +8,21 @@
 #define APP_DEVICES_DRIVER_BASEADCDRIVER_H_
 #include <Devices/McuAbstractionLayer/baseMcuAbstractionLayer.hpp>
 
-class baseAdcDriver {
+class lineSensorDriver {
    public:
-    baseAdcDriver(MAL* mcu, MAL::Peripheral_ADC p);
-    uint16_t getRawValue();
-    float getVoltage();
+    lineSensorDriver(MAL* mcu, MAL::Peripheral_ADC p);
+    void update();
 
-   protected:
+   private:
     MAL* _mcu;
     MAL::Peripheral_ADC _p;
 
-    const float _raw2voltage = 3.3f / (1 << 12);
+    const bool MuxA_SigPattern[16][4] = {
+
+    };
+    const bool MuxB_SigPattern[16][4] = {
+
+    }
 };
 
 #endif /* APP_DEVICES_DRIVER_BASEADCDRIVER_H_ */
