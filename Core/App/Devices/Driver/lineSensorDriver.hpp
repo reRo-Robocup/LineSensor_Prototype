@@ -4,8 +4,8 @@
  *  Created on: Dec 7, 2023
  */
 
-#ifndef APP_DEVICES_DRIVER_BASEADCDRIVER_H_
-#define APP_DEVICES_DRIVER_BASEADCDRIVER_H_
+#ifndef APP_DEVICES_DRIVER_LINESENSORDRIVER_H_
+#define APP_DEVICES_DRIVER_LINESENSORDRIVER_H_
 #include <Devices/McuAbstractionLayer/baseMcuAbstractionLayer.hpp>
 
 class lineSensorDriver {
@@ -25,4 +25,4 @@ class lineSensorDriver {
     }
 };
 
-#endif /* APP_DEVICES_DRIVER_BASEADCDRIVER_H_ */
+#endif /* APP_DEVICES_DRIVER_LINESENSORDRIVER_H_ */
