@@ -22,7 +22,7 @@ class lineSensorDriver {
     };
     const bool MuxB_SigPattern[16][4] = {
 
-    }
+    };
 };
 
 #endif /* APP_DEVICES_DRIVER_LINESENSORDRIVER_H_ */

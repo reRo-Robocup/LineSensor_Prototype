@@ -41,60 +41,42 @@ uint16_t stm32f446AbstractionLayer::adcGetValue(Peripheral_ADC p) {
 // GPIO
 
 void stm32f446AbstractionLayer::gpioSetValue(Peripheral_GPIO p, bool value) {
+    GPIO_PinState state = GPIO_PIN_RESET;
+    if (value) {
+        state = GPIO_PIN_SET;
+    }
+
     switch (p) {
         case Peripheral_GPIO::MuxA_Sig0:
-            if (value)
-                HAL_GPIO_WritePin(MuxA_Sig0_GPIO_Port, MuxA_Sig0_Pin, GPIO_PIN_SET);
-            else
-                HAL_GPIO_WritePin(MuxA_Sig0_GPIO_Port, MuxA_Sig0_Pin, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(MuxA_Sig0_GPIO_Port, MuxA_Sig0_Pin, state);
             break;
 
         case Peripheral_GPIO::MuxA_Sig1:
-            if (value)
-                HAL_GPIO_WritePin(MuxA_Sig1_GPIO_Port, MuxA_Sig1_Pin, GPIO_PIN_SET);
-            else
-                HAL_GPIO_WritePin(MuxA_Sig1_GPIO_Port, MuxA_Sig1_Pin, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(MuxA_Sig1_GPIO_Port, MuxA_Sig1_Pin, state);
             break;
+
         case Peripheral_GPIO::MuxA_Sig2:
-            if (value)
-                HAL_GPIO_WritePin(MuxA_Sig2_GPIO_Port, MuxA_Sig2_Pin, GPIO_PIN_SET);
-            else
-                HAL_GPIO_WritePin(MuxA_Sig2_GPIO_Port, MuxA_Sig2_Pin, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(MuxA_Sig2_GPIO_Port, MuxA_Sig2_Pin, state);
             break;
 
         case Peripheral_GPIO::MuxA_Sig3:
-            if (value)
-                HAL_GPIO_WritePin(MuxA_Sig3_GPIO_Port, MuxA_Sig3_Pin, GPIO_PIN_SET);
-            else
-                HAL_GPIO_WritePin(MuxA_Sig3_GPIO_Port, MuxA_Sig3_Pin, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(MuxA_Sig3_GPIO_Port, MuxA_Sig3_Pin, state);
             break;
 
         case Peripheral_GPIO::MuxB_Sig0:
-            if (value)
-                HAL_GPIO_WritePin(MuxB_Sig0_GPIO_Port, MuxB_Sig0_Pin, GPIO_PIN_SET);
-            else
-                HAL_GPIO_WritePin(MuxB_Sig0_GPIO_Port, MuxB_Sig0_Pin, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(MuxB_Sig0_GPIO_Port, MuxB_Sig0_Pin, state);
             break;
 
         case Peripheral_GPIO::MuxB_Sig1:
-            if (value)
-                HAL_GPIO_WritePin(MuxB_Sig1_GPIO_Port, MuxB_Sig1_Pin, GPIO_PIN_SET);
-            else
-                HAL_GPIO_WritePin(MuxB_Sig1_GPIO_Port, MuxB_Sig1_Pin, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(MuxB_Sig1_GPIO_Port, MuxB_Sig1_Pin, state);
             break;
 
         case Peripheral_GPIO::MuxB_Sig2:
-            if (value)
-                HAL_GPIO_WritePin(MuxB_Sig2_GPIO_Port, MuxB_Sig2_Pin, GPIO_PIN_SET);
-            else
-                HAL_GPIO_WritePin(MuxB_Sig2_GPIO_Port, MuxB_Sig2_Pin, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(MuxB_Sig2_GPIO_Port, MuxB_Sig2_Pin, state);
             break;
 
         case Peripheral_GPIO::MuxB_Sig3:
-            if (value)
-                HAL_GPIO_WritePin(MuxB_Sig3_GPIO_Port, MuxB_Sig3_Pin, GPIO_PIN_SET);
-            else
-                HAL_GPIO_WritePin(MuxB_Sig3_GPIO_Port, MuxB_Sig3_Pin, GPIO_PIN_RESET);
+            HAL_GPIO_WritePin(MuxB_Sig3_GPIO_Port, MuxB_Sig3_Pin, state);
             break;
 
         default:
