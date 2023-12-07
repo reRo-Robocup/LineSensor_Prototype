@@ -69,8 +69,8 @@ void Error_Handler(void);
 #define Analog_MuxB_GPIO_Port GPIOC
 #define MuxB_Sig1_Pin GPIO_PIN_10
 #define MuxB_Sig1_GPIO_Port GPIOA
-#define MuxB_SIg0_Pin GPIO_PIN_11
-#define MuxB_SIg0_GPIO_Port GPIOA
+#define MuxB_Sig0_Pin GPIO_PIN_11
+#define MuxB_Sig0_GPIO_Port GPIOA
 #define MuxB_Sig2_Pin GPIO_PIN_10
 #define MuxB_Sig2_GPIO_Port GPIOC
 #define MuxB_Sig3_Pin GPIO_PIN_11

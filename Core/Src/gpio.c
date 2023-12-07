@@ -55,7 +55,7 @@ void MX_GPIO_Init(void)
                           |MuxB_Sig3_Pin|MuxA_Sig0_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, MuxB_Sig1_Pin|MuxB_SIg0_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, MuxB_Sig1_Pin|MuxB_Sig0_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : PCPin PCPin PCPin PCPin
                            PCPin PCPin */
@@ -67,7 +67,7 @@ void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PAPin PAPin */
-  GPIO_InitStruct.Pin = MuxB_Sig1_Pin|MuxB_SIg0_Pin;
+  GPIO_InitStruct.Pin = MuxB_Sig1_Pin|MuxB_Sig0_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
