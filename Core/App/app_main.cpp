@@ -5,11 +5,16 @@
  */
 
 #include <app_main.h>
+#include <Devices/Devices.hpp>
+
+Devices devices;
 
 void app_init() {
+    devices.init();
 }
 void app_main() {
     app_init();
     while (1) {
+        devices.mcu->adcGetValue(MAL::Peripheral_ADC::MuxA);
     }
 }

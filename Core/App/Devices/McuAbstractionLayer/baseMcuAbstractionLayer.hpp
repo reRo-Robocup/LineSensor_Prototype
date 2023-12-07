@@ -12,11 +12,19 @@
 class baseMcuAbstractionLayer {
    public:
     enum Peripheral_ADC {
-
+        MuxA,
+        MuxB,
     };
 
     enum Peripheral_GPIO {
-
+        MuxA_Sig0,
+        MuxA_Sig1,
+        MuxA_Sig2,
+        MuxA_Sig3,
+        MuxB_Sig0,
+        MuxB_Sig1,
+        MuxB_Sig2,
+        MuxB_Sig3,
     };
 
     virtual void init(void) = 0;
