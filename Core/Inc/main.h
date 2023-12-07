@@ -57,6 +57,26 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define MuxA_Sig1_Pin GPIO_PIN_13
+#define MuxA_Sig1_GPIO_Port GPIOC
+#define MuxA_Sig2_Pin GPIO_PIN_14
+#define MuxA_Sig2_GPIO_Port GPIOC
+#define MuxA_Sig3_Pin GPIO_PIN_15
+#define MuxA_Sig3_GPIO_Port GPIOC
+#define Analog_MuxA_Pin GPIO_PIN_0
+#define Analog_MuxA_GPIO_Port GPIOC
+#define Analog_MuxB_Pin GPIO_PIN_1
+#define Analog_MuxB_GPIO_Port GPIOC
+#define MuxB_Sig1_Pin GPIO_PIN_10
+#define MuxB_Sig1_GPIO_Port GPIOA
+#define MuxB_SIg0_Pin GPIO_PIN_11
+#define MuxB_SIg0_GPIO_Port GPIOA
+#define MuxB_Sig2_Pin GPIO_PIN_10
+#define MuxB_Sig2_GPIO_Port GPIOC
+#define MuxB_Sig3_Pin GPIO_PIN_11
+#define MuxB_Sig3_GPIO_Port GPIOC
+#define MuxA_Sig0_Pin GPIO_PIN_12
+#define MuxA_Sig0_GPIO_Port GPIOC
 
 /* USER CODE BEGIN Private defines */
 
