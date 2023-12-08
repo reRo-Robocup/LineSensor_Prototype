@@ -6,6 +6,7 @@
 
 #include <Devices/McuAbstractionLayer/stm32f446AbstractionLayer.hpp>
 #include "adc.h"
+#include "usart.h"
 
 void stm32f446AbstractionLayer::init() {
     _initADC();
@@ -98,6 +99,15 @@ void stm32f446AbstractionLayer::gpioSetValue(Peripheral_GPIO p, bool value) {
 
 bool stm32f446AbstractionLayer::gpioGetValue(Peripheral_GPIO p) {
     return false;
+}
+
+// UART
+void stm32f446AbstractionLayer::uartSendByte(Peripheral_UART p, uint8_t* data, uint32_t size) {
+    switch (p) {
+        case Peripheral_UART::MainController:
+            HAL_UART_Transmit(&huart6, data, size, 100);
+            break;
+    }
 }
 
 void stm32f446AbstractionLayer::wait_ms(uint32_t ms) {

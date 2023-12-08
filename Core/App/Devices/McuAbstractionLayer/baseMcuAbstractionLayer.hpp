@@ -27,6 +27,10 @@ class baseMcuAbstractionLayer {
         MuxB_Sig3,
     };
 
+    enum Peripheral_UART {
+        MainController,
+    };
+
     virtual void init(void) = 0;
 
     virtual uint16_t adcGetValue(Peripheral_ADC p) = 0;
@@ -34,6 +38,8 @@ class baseMcuAbstractionLayer {
 
     virtual void gpioSetValue(Peripheral_GPIO p, bool value) = 0;
     virtual bool gpioGetValue(Peripheral_GPIO p) = 0;
+
+    virtual void uartSendByte(Peripheral_UART p, uint8_t* data, uint32_t size) = 0;
 
     virtual void wait_ms(uint32_t ms) = 0;
 };
