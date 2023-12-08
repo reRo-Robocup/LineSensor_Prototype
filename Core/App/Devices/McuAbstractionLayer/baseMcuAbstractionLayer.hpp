@@ -33,6 +33,8 @@ class baseMcuAbstractionLayer {
 
     virtual void gpioSetValue(Peripheral_GPIO p, bool value) = 0;
     virtual bool gpioGetValue(Peripheral_GPIO p) = 0;
+
+    virtual void wait_ms(uint32_t ms) = 0;
 };
 
 typedef baseMcuAbstractionLayer MAL;

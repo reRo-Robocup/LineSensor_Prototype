@@ -7,6 +7,7 @@
 #ifndef APP_DEVICES_Devices_H_
 #define APP_DEVICES_Devices_H_
 
+#include <Devices/Driver/lineSensorDriver.hpp>
 #include <Devices/McuAbstractionLayer/stm32f446AbstractionLayer.hpp>
 
 class Devices {
@@ -15,6 +16,7 @@ class Devices {
     void init();
 
     stm32f446AbstractionLayer* mcu;
+    lineSensorDriver* lineSensor;
 };
 
 #endif /* APP_DEVICES_Devices_H_ */

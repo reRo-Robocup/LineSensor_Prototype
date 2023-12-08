@@ -8,6 +8,7 @@
 
 Devices::Devices() {
     mcu = new stm32f446AbstractionLayer();
+    lineSensor = new lineSensorDriver(mcu);
 }
 
 void Devices::init() {

@@ -15,6 +15,6 @@ void app_init() {
 void app_main() {
     app_init();
     while (1) {
-        devices.mcu->adcGetValue(MAL::Peripheral_ADC::MuxA);
+        devices.lineSensor->update();
     }
 }

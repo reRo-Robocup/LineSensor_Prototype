@@ -18,6 +18,8 @@ class stm32f446AbstractionLayer : public baseMcuAbstractionLayer {
     virtual void gpioSetValue(Peripheral_GPIO p, bool value);
     virtual bool gpioGetValue(Peripheral_GPIO p);
 
+    virtual void wait_ms(uint32_t ms);
+
    private:
     // ADC
     void _initADC();

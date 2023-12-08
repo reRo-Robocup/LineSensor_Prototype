@@ -87,3 +87,7 @@ void stm32f446AbstractionLayer::gpioSetValue(Peripheral_GPIO p, bool value) {
 bool stm32f446AbstractionLayer::gpioGetValue(Peripheral_GPIO p) {
     return false;
 }
+
+void stm32f446AbstractionLayer::wait_ms(uint32_t ms) {
+    HAL_Delay(ms);
+}
