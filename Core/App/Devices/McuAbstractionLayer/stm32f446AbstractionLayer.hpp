@@ -9,16 +9,21 @@
 
 #include <Devices/McuAbstractionLayer/baseMcuAbstractionLayer.hpp>
 
+#define ADC_CALLBACK_MAX 10
+
 class stm32f446AbstractionLayer : public baseMcuAbstractionLayer {
    public:
     virtual void init(void);
 
     virtual uint16_t adcGetValue(Peripheral_ADC p);
+    virtual bool isAdcConvCplt(Peripheral_ADC p);
 
     virtual void gpioSetValue(Peripheral_GPIO p, bool value);
     virtual bool gpioGetValue(Peripheral_GPIO p);
 
     virtual void wait_ms(uint32_t ms);
+
+    static bool _adcCplt[2];
 
    private:
     // ADC

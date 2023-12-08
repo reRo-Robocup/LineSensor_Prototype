@@ -23,6 +23,8 @@ void lineSensorDriver::update() {
         _mcu->gpioSetValue(MAL::Peripheral_GPIO::MuxB_Sig3, MuxB_SigPattern[i][3]);
 
         //_mcu->wait_ms();
+        while (!_mcu->isAdcConvCplt(MAL::Peripheral_ADC::MuxA))
+            ;
 
         sensorValue[i] = _mcu->adcGetValue(MAL::Peripheral_ADC::MuxA);
         sensorValue[i + 16] = _mcu->adcGetValue(MAL::Peripheral_ADC::MuxB);

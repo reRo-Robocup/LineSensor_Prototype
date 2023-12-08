@@ -13,6 +13,7 @@ void stm32f446AbstractionLayer::init() {
 
 // ADC
 uint16_t stm32f446AbstractionLayer::_data[2] = {0};
+bool stm32f446AbstractionLayer::_adcCplt[2] = {0};
 
 void stm32f446AbstractionLayer::_initADC(void) {
     if (HAL_ADC_Start_DMA(&hadc1, (uint32_t*)this->_data, sizeof(uint16_t)) * hadc1.Init.NbrOfConversion !=
@@ -38,6 +39,15 @@ uint16_t stm32f446AbstractionLayer::adcGetValue(Peripheral_ADC p) {
     return 0;
 }
 
+bool stm32f446AbstractionLayer::isAdcConvCplt(Peripheral_ADC p) {
+    return this->_adcCplt[0];
+}
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* AdcHandle) {
+    if (AdcHandle == &hadc1) {
+        stm32f446AbstractionLayer::_adcCplt[0] = true;
+    }
+}
 // GPIO
 
 void stm32f446AbstractionLayer::gpioSetValue(Peripheral_GPIO p, bool value) {
