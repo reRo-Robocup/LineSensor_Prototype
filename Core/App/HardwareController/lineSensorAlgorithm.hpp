@@ -12,7 +12,7 @@ class lineSensorAlgorithm {
     lineSensorAlgorithm(Devices* devices);
     void init();
     void update();
-    float angle;
+    uint16_t angle;
 
    private:
     Devices* _devices;
