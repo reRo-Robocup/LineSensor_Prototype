@@ -6,23 +6,27 @@
 
 #include <app_main.h>
 #include <Devices/Devices.hpp>
+#include <HardwareController/HardwareController.hpp>
 
 Devices devices;
+HardwareController hwc(&devices);
 
-uint16_t sensor[32] = {0};
-bool isOnLine[32] = {0};
+uint16_t debug_sensor[32] = {0};
+bool debug_isOnLine[32] = {0};
 
 void app_init() {
     devices.init();
+    hwc.init();
 }
 void app_main() {
     app_init();
-    const int threshold = 2000;
+
     while (1) {
-        devices.lineSensor->update();
+        devices.update();
+        hwc.update();
+
         for (int i = 0; i < 32; i++) {
-            sensor[i] = devices.lineSensor->sensorValue[i];
-            isOnLine[i] = (sensor[i] > threshold);
+            debug_sensor[i] = devices.lineSensor->sensorValue[i];
         }
     }
 }

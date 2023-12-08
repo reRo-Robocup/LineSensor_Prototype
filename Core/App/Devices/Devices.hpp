@@ -14,6 +14,7 @@ class Devices {
    public:
     Devices();
     void init();
+    void update();
 
     stm32f446AbstractionLayer* mcu;
     lineSensorDriver* lineSensor;

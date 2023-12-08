@@ -14,3 +14,7 @@ Devices::Devices() {
 void Devices::init() {
     mcu->init();
 }
+
+void Devices::update() {
+    lineSensor->update();
+}
