@@ -33,9 +33,9 @@ void lineSensorAlgorithm::update() {
             y += _SinCosTable[0][i];
         }
     }
-    angle = rad_to_deg(atan2(y,x));
+    angle = rad_to_deg(atan2(y,x)) - 90;
     
     if(angle > 359) angle -= 360;
     else if(angle < 0) angle += 360;
-    angle = 180 - angle;
+    // angle = 180 - angle;
 }
