@@ -40,7 +40,9 @@ uint16_t stm32f446AbstractionLayer::adcGetValue(Peripheral_ADC p) {
 }
 
 bool stm32f446AbstractionLayer::isAdcConvCplt(Peripheral_ADC p) {
-    return this->_adcCplt[0];
+    bool t = _adcCplt[0];
+    _adcCplt[0] = 0;
+    return t;
 }
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* AdcHandle) {
