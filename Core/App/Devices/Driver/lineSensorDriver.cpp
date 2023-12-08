@@ -26,7 +26,7 @@ void lineSensorDriver::update() {
         while (!_mcu->isAdcConvCplt(MAL::Peripheral_ADC::MuxA))
             ;
 
-        sensorValue[i] = _mcu->adcGetValue(MAL::Peripheral_ADC::MuxA);
+        sensorValue[i]      = _mcu->adcGetValue(MAL::Peripheral_ADC::MuxA);
         sensorValue[i + 16] = _mcu->adcGetValue(MAL::Peripheral_ADC::MuxB);
     }
 }

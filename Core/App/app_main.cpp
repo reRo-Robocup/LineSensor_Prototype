@@ -9,17 +9,20 @@
 
 Devices devices;
 
-uint16_t sensor[16] = {0};
+uint16_t sensor[32] = {0};
+bool isOnLine[32] = {0};
 
 void app_init() {
     devices.init();
 }
 void app_main() {
     app_init();
+    const int threshold = 2000;
     while (1) {
         devices.lineSensor->update();
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < 32; i++) {
             sensor[i] = devices.lineSensor->sensorValue[i];
+            isOnLine[i] = (sensor[i] > threshold);
         }
     }
 }
