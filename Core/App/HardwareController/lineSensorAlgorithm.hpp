@@ -24,7 +24,7 @@ class lineSensorAlgorithm {
 
     bool _isOnLine[32] = {false};
     uint16_t _sensorValue[32];
-
+    uint8_t _line_ison_cnt = 0;
 };
 
 #endif /* APP_HARDWARECONTROLLER_LINESENSORALGORITHM_HPP_ */
