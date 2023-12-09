@@ -47,3 +47,9 @@ void lineSensorAlgorithm::update() {
     sendData[1] = angle & 0xFF;
     _devices->mcu->uartSendByte(MAL::Peripheral_UART::MainController, sendData, 2);
 }
+
+uint16_t lineSensorAlgorithm::getLineR() {
+    uint8_t r = 0; // r[cm]
+
+    return r;
+}

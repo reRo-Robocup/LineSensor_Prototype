@@ -12,6 +12,7 @@ class lineSensorAlgorithm {
     lineSensorAlgorithm(Devices* devices);
     void init();
     void update();
+    uint16_t getLineR();
     uint16_t angle;
 
    private:
