@@ -98,6 +98,7 @@ void stm32f446AbstractionLayer::gpioSetValue(Peripheral_GPIO p, bool value) {
 }
 
 bool stm32f446AbstractionLayer::gpioGetValue(Peripheral_GPIO p) {
+    // bool state = HAL_GPIO_ReadPin(GPIOx,GPIO_PIN_num);
     return false;
 }
 
