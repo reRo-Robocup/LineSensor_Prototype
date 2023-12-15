@@ -56,5 +56,5 @@ uint16_t lineSensorAlgorithm::getLineR() {
     while(base_angle < -180) base_angle += 360;
     r =  cos(deg_to_rad(base_angle + lineSensorAlgorithm::angle));
     r *= constant * lineSensorAlgorithm::SensorPCB_R;
-    return r;
+    return (uint16_t)r;
 }
