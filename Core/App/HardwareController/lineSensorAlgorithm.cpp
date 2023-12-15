@@ -49,7 +49,12 @@ void lineSensorAlgorithm::update() {
 }
 
 uint16_t lineSensorAlgorithm::getLineR() {
-    uint8_t r = 0; // r[cm]
-
+    float r = 0;
+    float constant = 1.0;   // fix constant(~cm)
+    uint8_t base_angle = 0; // IMU data
+    while(base_angle > 180)  base_angle -= 360;
+    while(base_angle < -180) base_angle += 360;
+    r =  cos(deg_to_rad(base_angle + lineSensorAlgorithm::angle));
+    r *= constant * lineSensorAlgorithm::SensorPCB_R;
     return r;
 }
