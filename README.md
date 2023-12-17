@@ -1,2 +1,4 @@
 # LineSensor_Prototype
-Mcu : STM32F446RET6
+MCU : STM32F446RET6
+
+For LineSensor_Prototype
